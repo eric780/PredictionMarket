@@ -17,18 +17,18 @@ for filen in files:
 			target = []
 			for row in csvreader:
 				if csvreader.line_num != 1:
-					if row[5] == str(risk):
+					if risk == 1.25:
 						final.append(row[10])
 						actual.append(row[9])
 						target.append(row[8])
-					if risk == 1.25:
+					elif row[5] == str(risk) or row[5] == '1':
 						final.append(row[10])
 						actual.append(row[9])
 						target.append(row[8])
 			fin = np.array(map(float,final))
 			act = np.array(map(float,actual))
 			tar = np.array(map(float,target))
-			if not(len(fin)<=0):	
+			if len(fin)>0:	
 				if risk <= 1:
 					csvwriter.writerow(["risk: "+ str(risk)])
 					csvwriter.writerow(["nonMan vs Market"])
