@@ -1,10 +1,8 @@
 import numpy as np
 import csv
 
-files = ['sweep6', 'sweep7',
-'sweep8', 'sweep9']
-
-col = 1
+# files = ['sweep6', 'sweep7','sweep8', 'sweep9']
+files = ['sweep10','sweep11']
 
 for filen in files:
     filename = filen + "new"
@@ -12,7 +10,9 @@ for filen in files:
         csvwriter = csv.writer(f_out)
         csvwriter.writerow(["Run","manSellers","Buyers","manBuyers","Sellers","riskAversion","maxRounds",
                             "Trades","manTarget","actualPrice","finalPrice"])
-        while col < (640*4):
+        col = 1
+        # while col < (640*4):
+        while col < (320*4):
             with open(filename+".csv", 'rb') as f_in: 
                 csvreader = csv.reader(f_in)
                 stuff = []
