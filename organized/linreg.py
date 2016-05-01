@@ -10,14 +10,14 @@ for filen in files:
 		csvwriter = csv.writer(f_out)
 		risk = 0
 		while risk <= 1.25:
-			print risk,filen
 			csvreader = csv.reader(f_in)
+			f_in.seek(0)
 			final = []
 			actual = []
 			target = []
 			for row in csvreader:
 				if csvreader.line_num != 1:
-					if float(row[5]) == risk:
+					if row[5] == str(risk):
 						final.append(row[10])
 						actual.append(row[9])
 						target.append(row[8])
