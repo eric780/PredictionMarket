@@ -20,8 +20,8 @@ for filen in files:
 		fin = np.array(map(float,final))
 		act = np.array(map(float,actual))
 		tar = np.array(map(float,target))
-		x = [abs(a - b) for a, b in zip(fin, act)]
-		y = [abs(a - b) for a, b in zip(fin, tar)]
 		
 		csvwriter.writerow(["slope","intercept","r-value","p_value","std_err"])
-		csvwriter.writerow(stats.linregress(x,y))
+		csvwriter.writerow(stats.linregress(act,fin))
+		if filen != 'manNone':
+			csvwriter.writerow(stats.linregress(tar,fin))
