@@ -1,0 +1,5 @@
+No manips buyers or sellers: 6,7,10
+Only Buyers, Only Sellers:
+
+6 , 7 , 10 , 8 , 9 , 11 both buyers and seller manipulators
+
