@@ -29,10 +29,10 @@ with open (filename, 'wb') as f_out, open (filen+".csv", 'rb') as f_in:
                 csvwriter.writerow(["risk: "+ str(risk)])
                 csvwriter.writerow(["nonMan vs Market"])
                 csvwriter.writerow(["slope","intercept","r-value","p_value","std_err"])
-                csvwriter.writerow(stats.linregress(fin,act))
+                csvwriter.writerow(stats.linregress(fin,tar))
                 csvwriter.writerow([])
                 csvwriter.writerow(final)
-                csvwriter.writerow(actual)
+                csvwriter.writerow(target)
                 csvwriter.writerow([])
         risk += 0.25
 
