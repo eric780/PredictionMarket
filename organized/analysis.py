@@ -4,7 +4,7 @@ import csv
 
 filen = "allData"
 
-filename = filen + "Analysis" + ".csv"
+filename = filen + "Analysis1" + ".csv"
 with open (filename, 'wb') as f_out, open (filen+".csv", 'rb') as f_in:
 	csvwriter = csv.writer(f_out)
 	risk = 0
@@ -16,7 +16,7 @@ with open (filename, 'wb') as f_out, open (filen+".csv", 'rb') as f_in:
 		target = []
 		for row in csvreader:
 			if csvreader.line_num != 1:
-				if (row[1] == 0 and row[3] == 0) and (row[5] == str(risk) or row[5] == '1'):
+				if (row[2] == row[4]) and (row[1] == '0' and row[3] == '0') and (row[5] == str(risk) or row[5] == '1'):
 					final.append(row[10])
 					actual.append(row[9])
 					target.append(row[8])
@@ -29,7 +29,7 @@ with open (filename, 'wb') as f_out, open (filen+".csv", 'rb') as f_in:
 				csvwriter.writerow(["nonMan vs Market"])
 				csvwriter.writerow(["slope","intercept","r-value","p_value","std_err"])
 				csvwriter.writerow(stats.linregress(fin,act))
-				csvwrtier.writerow([])
+				csvwriter.writerow([])
 				csvwriter.writerow(final)
 				csvwriter.writerow(actual)
 				csvwriter.writerow([])
